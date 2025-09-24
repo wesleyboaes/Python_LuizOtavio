@@ -25,13 +25,13 @@ while True:
         continue
 
     if letter_typed in secret_word:
-        correct_letters += letter_typed
+        correct_letters += letter_typed # Creating a string with correct letters
 
     new_word = ''
 
-    for secret_letter in secret_word:
-        if secret_letter in correct_letters:
-            new_word += secret_letter
+    for letter in secret_word: # Check each secret word index
+        if letter in correct_letters: # Check if the letter of that index makes part of the string correct letter
+            new_word += letter
         else:
             new_word += '*'
 
@@ -43,8 +43,10 @@ while True:
         print('Congratulations! You got it right!')
         print('The secret word is:', secret_word)
         print(f'Number of attempts: {attempts}')
-        correct_letters = ''
-        attempts = 0
-        break
-    else:
-        continue
+        again = input('Do you want to go again? [y] or [n]')
+        if again == 'y':
+            correct_letter = ''
+            attempts = 0
+            continue
+        else:
+            break
