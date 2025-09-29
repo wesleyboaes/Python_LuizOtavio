@@ -6,14 +6,14 @@ Avoid allowing the program to crash with non-existent index errors.
 
 import os
 
-lista = []
+lista = [] # Empty list
 
 while True:
     print('Select an option:')
     option = input('[i]nsert [d]elete [l]ist: ')
 
     if option == 'i':
-        os.system('cls' if os.name == 'nt' else 'clear')
+        os.system('cls' if os.name == 'nt' else 'clear') # Clear terminal
         item = input('Item: ')
         lista.append(item)
     
@@ -21,13 +21,13 @@ while True:
         delete_str = input('Chose the index to delete: ')
 
         try:
-            delete_int = int(delete_str)
-            del lista[delete_int]
+            delete_int = int(delete_str) # Converts to integer
+            del lista[delete_int] # Deletes the chosen index
         except:
             print('It is not possible to delete this index!')
     
     elif option == 'l':
-        os.system('cls' if os.name == 'nt' else 'clear')
+        os.system('cls' if os.name == 'nt' else 'clear') # Clear terminal
         if len(lista) < 1:
             print('Nothing to list!')
         else:
@@ -38,5 +38,5 @@ while True:
         break
 
     else:
-        print('Please, chose i d or l"')
+        print('Please, chose [i] [d] or [l]"')
         continue
