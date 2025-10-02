@@ -25,6 +25,7 @@ The second digit of CPF is 0
 # Using regular expressions:
 
 import re
+import sys
 
 entry = input('Enter a CPF [746.824.890-70]: ')
 
@@ -33,6 +34,12 @@ cpf = re.sub( # It will substitute something from somewhere
    '', # Substituting for nothing, in this case it will make a string of numbers
    entry # The variable that receives the substitutions 
 )
+
+repeated = cpf == cpf[0] * len(cpf)
+
+if repeated:
+   print('You typed repeated numbers sequentially!')
+   sys.exit()
 
 print(f'The cpf is {cpf}') # Now I have a string, not a list anymore
 
