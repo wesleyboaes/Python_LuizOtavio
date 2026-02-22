@@ -12,3 +12,4 @@ def soma(x, y, z = None):
         print(f'{x=} {y=}', x + y)
 
 soma (1, 2)
+soma (7, 9, 0)
