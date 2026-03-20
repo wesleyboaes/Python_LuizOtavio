@@ -1,55 +1,34 @@
-# Dictionaries in Python (dict type)
-# Dictionaries are data structures of type "curly brackets" pair and "value"
-# Curly Brackets can be considered as an "index" like we saw in list, and they can be of immutable types as: str, int, float, bool, tuple, etc.
-# The value can be of any type, including another dictionary.
-# We use curly brackets - {} - or the dict class to create dictionaries.
-# Immutables: str, int, float, bool, tuple
-# Mutable: dict, list
-
-# person = {
-#     'name': 'Wesley',
-#     'last_name': 'Boaes',
-#     'age': 34,
-#     'height': 1.73,
-#     'address': [
-#         {'street': 'Street Name', 'number': 999},
-#         {'other_street': 'Other Street Name', 'other_number': 111},
-#     ],
-# }
-# person = dict(name='Wesley', last_name='Boaes')
+# Useful dictionary methods in Python
+# len - how many keys
+# keys - iterable with keys
+# values - iterable with values
+# items - iterable with keys and values
+# setdefault - add values if key doesn't exist
+# copy - return a shallow copy
+# get - obtain a key
+# pop - Delete an item with a specified key
+# update - Updates one dictionary with another
 
 person = {
     'name': 'Wesley',
     'last_name': 'Boaes',
-    'age': 34,
-    'height': 1.73,
-    'address': [
-        {'street': 'Street Name', 'number': 999},
-        {'other_street': 'Other Street Name', 'other_number': 111},
-    ],
+    # 'age': 99,
 }
-# print(person, type(person))
-print(person['name'])
-print(person['last_name'])
-print('\n#################\n')
 
-for key in person:
-    print(key, person[key])
+person.setdefault('age', 99)
+print(person['age'])
+# print(len(person))
+# print(person.keys())
+# items = tuple(person.keys())
+# print(items[0], items[1])
+# print(list(person.keys()))
+# print(list(person.values()))
+# print(list(person.items()))
 
-print('\n#################\n')
+# for key in person:
+#     print(key)
+# for value in person.values():
+#     print(value)
 
-key = 'name'
-person[key] = 'Maiara Boaes'
-person['last_name'] = 'Oliveira'
-
-print(person[key])
-
-del person['last_name']
-print(person)
-
-# print(person.get('last_name', None))
-
-if person.get('last_name') is None:
-    print("DOESN'T EXIST")
-else:
-    print(person['last_name'])
+# for key, value in person.items():
+#     print(key, value)
